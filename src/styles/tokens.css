@@ -1,0 +1,88 @@
+/* MajiMap design tokens. Names and values mirror the Figma variables in 01 Tokens
+   (collection "MajiMap DS", modes Maji Light and Maji Dark). Change a value here and it spreads everywhere. */
+:root {
+  /* Surfaces */
+  --mm-surface-base: #f3f6f8; --mm-surface-base-warm: #f6f3ec; --mm-surface-raised: #ffffff; --mm-surface-low: #e6ebee;
+  --mm-surface-brand: #0f4c6b; --mm-surface-brand-subtle: #dee8ff; --mm-surface-accent-soft: #a8d8e8; --mm-surface-accent: #f2d6a2;
+  --mm-surface-accent-subtle: #fbf1dc; --mm-surface-selected: #f8ebcf; --mm-surface-disabled: #ebebeb; --mm-surface-inverse: #16252f;
+  --mm-surface-scrim: rgba(22, 37, 47, 0.5);
+  /* Text and icons */
+  --mm-text-default: #16252f; --mm-text-secondary: #4a5c69; --mm-text-tertiary: #566977; --mm-text-brand: #0f4c6b; --mm-text-link: #00658b;
+  --mm-text-on-brand: #ffffff; --mm-text-on-accent: #16252f; --mm-text-disabled: #858585; --mm-text-error: #b3261e;
+  /* Borders */
+  --mm-border-default: #e6ebee; --mm-border-input: #7a8a96; --mm-border-focus: #00658b; --mm-border-brand: #0f4c6b; --mm-border-error: #b3261e; --mm-border-disabled: #d4d4d4;
+  /* Actions */
+  --mm-action-primary: #0f4c6b; --mm-action-primary-hover: #0a3a54; --mm-action-primary-pressed: #072c40;
+  --mm-action-secondary-hover: #f0f3ff; --mm-action-secondary-pressed: #e7eeff;
+  --mm-action-tonal: #dee8ff; --mm-action-tonal-hover: #d2defa; --mm-action-tonal-pressed: #c7d6f7;
+  --mm-action-accent: #e6bc6b; --mm-action-accent-hover: #d9a94f; --mm-action-accent-pressed: #c9963a;
+  --mm-action-danger: #b3261e; --mm-action-danger-hover: #8f1e18; --mm-action-danger-pressed: #6e1712;
+  --mm-accent: #00658b;
+  /* Status (background + text; always shown with an icon or a word, never colour alone) */
+  --mm-status-operational-bg: #dff3e7; --mm-status-operational-text: #1e7a4c;
+  --mm-status-warning-bg: #fcefd0; --mm-status-warning-text: #8a5300;
+  --mm-status-faulty-bg: #fbe4e2; --mm-status-faulty-text: #b3261e;
+  --mm-status-repair-bg: #fde6d3; --mm-status-repair-text: #a04a00;
+  --mm-status-unverified-bg: #ece8f8; --mm-status-unverified-text: #5b4b9a;
+  --mm-status-info-bg: #e3f2f8; --mm-status-info-text: #00658b;
+  /* Logo */
+  --mm-logo-ring-outer: #6ab4d6; --mm-logo-ring-inner: #2e7fa6; --mm-logo-drop: #0f4c6b; --mm-logo-word-2: #2e7fa6;
+  /* Map */
+  --mm-map-filter: none; --mm-map-line: #0f4c6b;
+
+  /* Spacing (8-point grid; there is no md) */
+  --mm-space-3xs: 1px; --mm-space-2xs: 2px; --mm-space-xs: 4px; --mm-space-sm: 8px; --mm-space-ms: 12px; --mm-space-lg: 16px; --mm-space-xl: 24px; --mm-space-2xl: 32px; --mm-space-3xl: 48px;
+  /* Radius */
+  --mm-radius-xs: 4px; --mm-radius-sm: 8px; --mm-radius-md: 12px; --mm-radius-lg: 16px; --mm-radius-xl: 24px; --mm-radius-pill: 9999px; --mm-radius-input: 8px; --mm-radius-card: 12px;
+
+  /* Layout: 12 fluid columns. Margin and gutter are 24 at 1440; the content stretches with the window and is centred past the max. */
+  --mm-grid-columns: 12; --mm-grid-gutter: 24px; --mm-grid-margin: 24px; --mm-content-max: 1280px;
+  --mm-sidebar-width: 264px; --mm-sidebar-collapsed: 72px; --mm-header-height: 64px;
+  --mm-form-width: 720px; --mm-dialog-width: 560px;
+  --mm-control: 40px; --mm-control-sm: 32px;
+
+  /* Type */
+  --mm-font: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mm-font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Effects (shadows only on floating layers) */
+  --mm-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --mm-shadow-raised: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 8px rgba(0, 0, 0, 0.04);
+  --mm-shadow-overlay: 0 1px 2px rgba(0, 0, 0, 0.05), 0 8px 24px -4px rgba(15, 76, 107, 0.18);
+  --mm-focus-ring: 0 0 0 2px var(--mm-surface-raised), 0 0 0 4px var(--mm-border-focus);
+  color-scheme: light;
+}
+
+/* Maji Dark: the brand stays visible on dark surfaces */
+html[data-theme="dark"] {
+  --mm-surface-base: #071c29; --mm-surface-base-warm: #071c29; --mm-surface-raised: #0d2736; --mm-surface-low: #143549;
+  --mm-surface-brand: #6ab4d6; --mm-surface-brand-subtle: #123f56; --mm-surface-accent-soft: #164a63; --mm-surface-accent: #e6bc6b;
+  --mm-surface-accent-subtle: #2f2813; --mm-surface-selected: #3a3014; --mm-surface-disabled: #143549; --mm-surface-inverse: #eaf2f6;
+  --mm-surface-scrim: rgba(3, 12, 18, 0.66);
+  --mm-text-default: #eaf2f6; --mm-text-secondary: #c3d5df; --mm-text-tertiary: #a4bccb; --mm-text-brand: #8cc6e0; --mm-text-link: #7cc4ea;
+  --mm-text-on-brand: #072c40; --mm-text-disabled: #6e8796; --mm-text-error: #ffa59d;
+  --mm-border-default: #24506a; --mm-border-input: #7fa3b8; --mm-border-focus: #8cc6e0; --mm-border-brand: #6ab4d6; --mm-border-error: #ffa59d; --mm-border-disabled: #2c4a5c;
+  --mm-action-primary: #6ab4d6; --mm-action-primary-hover: #8cc6e0; --mm-action-primary-pressed: #a8d8e8;
+  --mm-action-secondary-hover: #123a50; --mm-action-secondary-pressed: #174259;
+  --mm-action-tonal: #1c4d68; --mm-action-tonal-hover: #174259; --mm-action-tonal-pressed: #123549;
+  --mm-action-accent-hover: #efcb85; --mm-action-accent-pressed: #f5d9a3;
+  --mm-action-danger: #f2a19a; --mm-action-danger-hover: #f5b7b2; --mm-action-danger-pressed: #f9cdca;
+  --mm-accent: #6ab4d6;
+  --mm-status-operational-bg: #12372a; --mm-status-operational-text: #8fddb0;
+  --mm-status-warning-bg: #3d2f0e; --mm-status-warning-text: #f2c866;
+  --mm-status-faulty-bg: #431a17; --mm-status-faulty-text: #ffa59d;
+  --mm-status-repair-bg: #42240c; --mm-status-repair-text: #f7b074;
+  --mm-status-unverified-bg: #2a2450; --mm-status-unverified-text: #c7bdf5;
+  --mm-status-info-bg: #103a52; --mm-status-info-text: #8cd0f2;
+  --mm-logo-ring-outer: #a8d8e8; --mm-logo-ring-inner: #6ab4d6; --mm-logo-drop: #fafcfb; --mm-logo-word-2: #6ab4d6;
+  --mm-map-filter: invert(1) hue-rotate(185deg) saturate(0.7) brightness(0.72) contrast(0.92); --mm-map-line: #8cc6e0;
+  --mm-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --mm-shadow-raised: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 8px rgba(0, 0, 0, 0.25);
+  --mm-shadow-overlay: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px -4px rgba(0, 0, 0, 0.55);
+  color-scheme: dark;
+}
+
+/* Laptop, tablet and phone margins from the layout tokens */
+@media (max-width: 1180px) { :root { --mm-grid-margin: 24px; --mm-grid-gutter: 16px; } }
+@media (max-width: 720px) { :root { --mm-grid-margin: 16px; --mm-grid-gutter: 16px; --mm-control: 48px; --mm-control-sm: 40px; --mm-form-width: 100%; } }
+html[data-targets="large"] { --mm-control: 48px; --mm-control-sm: 40px; }

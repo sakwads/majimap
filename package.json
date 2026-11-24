@@ -1,0 +1,22 @@
+{
+  "name": "majimap-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Clickable desktop prototype of MajiMap (concept): water infrastructure intelligence for Kenyan counties. Sample data only.",
+  "scripts": {
+    "icons": "node scripts/gen-icons.mjs",
+    "build": "node build.mjs",
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@fontsource/figtree": "^5.2.0",
+    "@fontsource/jetbrains-mono": "^5.2.0",
+    "esbuild": "^0.25.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@tabler/icons": "^3.30.0"
+  },
+  "engines": { "node": "22" }
+}
